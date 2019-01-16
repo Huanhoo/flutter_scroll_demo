@@ -47,10 +47,12 @@ class MyAppState extends State<MyAppPage> {
     return new ListView.builder(
       padding: const EdgeInsets.all(16.0),
       itemCount: 100,
-      itemBuilder: (context, i) {
-        if (i.isOdd) return new Divider();
-        return _buildRow("1");
-      },
+      itemBuilder: (context, i) => GestureDetector(
+          onTap: () => _push(),
+          child: _buildRow("1")
+
+
+      ),
     );
   }
 
